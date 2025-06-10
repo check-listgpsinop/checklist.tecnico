@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist Usuário e Máquina</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 10px; }
+    h1 { text-align: center; }
+    h2 { margin-top: 10px; }
+    .section {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  width: 95%;
+}
+
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
+    .checkbox-group {
+      display: block;
+    }
+    .checkbox-group label {
+      display: inline-block;
+      width: 30%;
+      margin-bottom: 5px;
+    }
+    label { display: flex; align-items: center; gap: 5px; margin-bottom: 5px; }
+    input[type=text], textarea {
+      width: 100%;
+      padding: 1px;
+      margin-top: 1px;
+    }
+    .page-break {
+      page-break-before: always;
+      break-before: always;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #45a049;
+    }
+    @page {
+      size: A4;
+      margin: 1mm;
+    }
+    #dez{
+      margin-top: 10px;
+    }
+    .obs{
+      color: red;
+    }
+    #tres{
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="checklist">
+
+<h1>Checklist - Suporte técnico</h1>
+
+<div class="section">
+  <h2>Dados do Atendimento</h2>
+  <label> Técnico Executor: <input type="text" placeholder="Insira o nome do técnico que realizou seu atendimento"> </label>
+  <label> Data: <input type="date" placeholder="__/__/____"> </label>
+  <label> Tipo: 
+    <input type="checkbox"> Desktop 
+    <input type="checkbox"> Notebook
+  </label>
+  <label> Filial: <input type="text"> </label>
+  <label> Nome do Usuário: <input type="text"> </label>
+  <label> Nº Patrimônio: <input type="text"> </label>
+  <label> Setor: <input type="text"> </label>
+  <label> Chamado: <input type="text"> </label>
+</div>
+
+<div class="section">
+  <h2>1. Backup</h2>
+  <label><input type="checkbox">SIM</label>
+  <label><input type="checkbox">NÃO</label>
+  <label><input type="checkbox"> Backup por OneDrive - SIM</label>
+  <label><input type="checkbox"> Backup por OneDrive - NÃO</label>
+</div>
+
+<div class="section">
+  <h2>2. Configurações Sistema Operacional:</h2>
+  <div class="checkbox-group">
+    <label><input type="checkbox">Windows 10 Pro/11/11 Pro </label>
+    <label><input type="checkbox">Windows update </label>
+    <label><input type="checkbox">Horário windows </label>
+    <label><input type="checkbox">Drivers instalados </label>
+    <label><input type="checkbox">Licença windows 10 Pro </label>
+    <label><input type="checkbox">Conf. opções da internet </label>
+    <label><input type="checkbox">Conta local - usuário filial </label>
+    <label><input type="checkbox">Excluir usuário TI </label>
+    <label><input type="checkbox">Senha administrador filial </label>
+    <label><input type="checkbox">Domínio da empresa </label>
+  </div>
+  
+  <label><b>Configuração Realizada?</label>
+  </b><label><input type="checkbox"> SIM </label>
+    <label> <input type="checkbox"> NÃO</label>
+    <h4>Programa de suporte de Software/Hardware:</h4>
+      <label><input type="checkbox">Lenovo Diagnotics</label>
+      <label><input type="checkbox">Intel Driver & Support Assistant </label>
+      <label><input type="checkbox">SuportAssist (Dell) </label>
+  
+</div>
+
+<div class="section" id="tres">
+  <h2>3. Programas Padrão</h2>
+  <div class="checkbox-group">
+    <label><input type="checkbox"> Java</label>
+    <label><input type="checkbox"> Pacote Office</label>
+    <label><input type="checkbox"> Microsoft Teams</label>
+    <label><input type="checkbox"> Milvus</label>
+    <label><input type="checkbox"> AnyDesk</label>
+    <label><input type="checkbox"> Bitdefender</label>
+    <label><input type="checkbox"> Google Chrome</label>
+    <label><input type="checkbox"> WinRar</label>
+    <label><input type="checkbox"> Adobe Reader</label>
+    <label><input type="checkbox"> RM</label>
+    <label><input type="checkbox"> OneDrive</label>
+    <label><input type="checkbox"> Protheu</label>
+    <label><input type="checkbox"> UOL</label>
+    <label><input type="checkbox"> Fortine</label>
+    <label><input type="checkbox"> Office 2016</label>
+    <label><input type="checkbox"> Office 365</label>
+    <p class="obs">*AVALIAR OS SOFTWARES ESSENCIAIS DO DEPARTAMENTO</p>
+  </div>
+  <label>Necessário outro programa? <input type="text" placeholder="Especifique"></label>
+</div>
+
+
+<div class="section" id="dez">
+  <h2>4. Softwares Especiais</h2>
+  <div class="checkbox-group">
+    <label><input type="checkbox"> AutoCAD</label>
+    <label><input type="checkbox"> 3DS Max</label>
+    <label><input type="checkbox"> Chaos Corona</label>
+    <label><input type="checkbox"> Chaos Vantage</label>
+    <label><input type="checkbox"> Métrica Topologia</label>
+    <label><input type="checkbox"> Revit</label>
+    <label><input type="checkbox"> Photoshop</label>
+    <label><input type="checkbox"> Dropbox</label>
+    <label><input type="checkbox"> RD Station</label>
+    <label><input type="checkbox"> Capcut</label>
+    <label><input type="checkbox"> Think Cell</label>
+    <label><input type="checkbox"> Pro Saneamento</label>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Observações</h2>
+  <textarea rows="4" placeholder="Digite aqui..."></textarea>
+</div>
+
+</div>
+
+<button class="button" onclick="gerarPDF()">Gerar PDF</button>
+
+<script>
+  function gerarPDF() {
+    const element = document.getElementById('checklist');
+    const opt = {
+      margin: 5,
+      filename: 'Checklist-Usuario-Maquina.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2, // Melhora a qualidade e evita corte
+        scrollY: 0,
+        useCORS: true
+      },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: {
+        mode: ['css', 'legacy'],
+        avoid: ['.section', '.page-break']
+      }
+    };
+    html2pdf().set(opt).from(element).save();
+  }
+</script> 
+
+</body>
+</html>
+
