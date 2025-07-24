@@ -11,12 +11,12 @@
     h2 { margin-top: 10px; }
     .section {
   border: 1px solid #ccc;
-  padding: 5px;
+  padding: 2px;
   margin-bottom: 5px;
   border-radius: 4px;
   break-inside: avoid;
   page-break-inside: avoid;
-  width: 95%;
+  width: 97%;
 }
 
 .page-break {
@@ -65,6 +65,24 @@
     #tres{
       margin-top: 10px;
     }
+   #dados{
+      display: block;
+    }
+    #dados label{
+      display: inline-block;
+      width: 30%;
+      margin-bottom: 5px;
+      padding: 2px;
+    }
+    .backup{
+      display: block;
+    }
+    .backup label{
+      display: inline;
+      width: 5%;
+      margin-bottom: 5px;
+      padding: 5px;
+    }
   </style>
 </head>
 <body>
@@ -73,28 +91,32 @@
 
 <h1>Checklist - Suporte técnico</h1>
 
-<div class="section">
+<div class="section" id="dados">
   <h2>Dados do Atendimento</h2>
   <label> Técnico Executor: <input type="text" placeholder="Insira seu nome... "> </label>
-  <label> Data: <input type="date" placeholder="__/__/____"> </label>
-  <label> Tipo: 
-    <input type="checkbox"> Desktop 
-    <input type="checkbox"> Notebook
-  </label>
+  <label> Setor: <input type="text"> </label>
+  <label> Chamado: <input type="text"> </label>
   <label> Filial: <input type="text"> </label>
   <label> Nome do Usuário: <input type="text"> </label>
   <label> Nº Patrimônio: <input type="text"> </label>
   <label> Nº de Série/TAG: <input type="text"> </label>
-  <label> Setor: <input type="text"> </label>
-  <label> Chamado: <input type="text"> </label>
+  <label> Data:
+  <br><input type="date" placeholder="__/__/____"> </label>
+  <label> Tipo: 
+    <br>
+    <input type="checkbox"> Desktop 
+    <input type="checkbox"> Notebook
+  </label>
 </div>
 
 <div class="section">
   <h2>1. Backup</h2>
-  <label><input type="checkbox">SIM</label>
-  <label><input type="checkbox">NÃO</label>
-  <label><input type="checkbox"> Backup por OneDrive - SIM</label>
-  <label><input type="checkbox"> Backup por OneDrive - NÃO</label>
+   <div class="backup"> 
+      <label><input type="checkbox">SIM</label>
+      <label><input type="checkbox">NÃO</label>
+  </div>
+      <label><input type="checkbox"> Backup por OneDrive - SIM</label>
+      <label><input type="checkbox"> Backup por OneDrive - NÃO</label>
 </div>
 
 <div class="section">
@@ -111,10 +133,13 @@
     <label><input type="checkbox">Usuário/Senha Admin</label>
   </div>
   
-  <label><b>Configuração Realizada?</label>
-  </b><label><input type="checkbox"> SIM </label>
+    <label><b>Configuração Realizada?</label>
+    </b>
+    <label><input type="checkbox"> SIM </label>
     <label> <input type="checkbox"> NÃO</label>
+  
     <h4>Programa de suporte de Software/Hardware:</h4>
+  
       <label><input type="checkbox">Lenovo Diagnotics</label>
       <label><input type="checkbox">Intel Driver & Support Assistant </label>
       <label><input type="checkbox">SuportAssist (Dell) </label>
